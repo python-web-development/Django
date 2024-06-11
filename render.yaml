@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: interview-app
+    env: python
+    plan: free
+    buildCommand: 
+    startCommand: gunicorn interview_app.wsgi:application
