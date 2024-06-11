@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ language.name }} Interview Questions</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="title">{{ language.name }} Interview Questions</div>
+        <button onclick="window.location.href='{% url 'home' %}'">Close</button>
+    </div>
+    <div class="questions">
+        {% for question in page_obj %}
+            <div class="question">
+                <label>{{ question.question_text }}</label>
+                <div class="answer">
+                    <p>{{ question.answer_text }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    <div class="pagination">
+        {% if page_obj.has_previous %}
+            <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+        {% endif %}
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Next</a>
+        {% endif %}
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('.question label').click(function(){
+                $(this).next('.answer').toggle();
+            });
+        });
+    </script>
+</body>
+</html>

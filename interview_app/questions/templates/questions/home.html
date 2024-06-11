@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview Questions</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <div class="title">Interview Questions</div>
+        <input type="text" class="search" placeholder="Search...">
+    </div>
+    <h1>Interview Questions</h1>
+    <div class="tiles">
+        {% for language in languages %}
+            <div class="tile">
+                <a href="{% url 'detail' language.id %}" style="color: #ffffff; text-decoration: none;">{{ language.name }}</a>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

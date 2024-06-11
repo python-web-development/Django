@@ -1,0 +1,140 @@
+﻿Language,Question,Answer
+Python,What is Python? List some popular applications of Python in the world of technology.,"Python is a widely-used general-purpose, high-level programming language. It was created by Guido van Rossum in 1991 and further developed by the Python Software Foundation. It was designed with an emphasis on code readability, and its syntax allows programmers to express their concepts in fewer lines of code.
+It is used for:
+
+System Scripting
+Web Development
+Game Development
+Software Development
+Complex Mathematics"
+Python,What are the benefits of using Python language as a tool in the present scenario?,"The following are the benefits of using Python language:
+
+
+Object-Oriented Language
+High-Level Language
+Dynamically Typed language
+Extensive support Libraries
+Presence of third-party modules
+Open source and community development
+Portable and Interactive
+Portable across Operating systems"
+Python,Is Python a compiled language or an interpreted language?,"Actually, Python is a partially compiled language and partially interpreted language. The compilation part is done first when we execute our code and this will generate byte code internally this byte code gets converted by the Python virtual machine(p.v.m) according to the underlying platform(machine+operating system)."
+Python,What does the ‘#’ symbol do in Python?,‘#’ is used to comment on everything that comes after on the line.
+Python,What is the difference between a Mutable datatype and an Immutable data type?,"Mutable data types can be edited i.e., they can change at runtime. Eg – List, Dictionary, etc.
+Immutable data types can not be edited i.e., they can not change at runtime. Eg – String, Tuple, etc."
+Python,How are arguments passed by value or by reference in Python?,"Everything in Python is an object and all variables hold references to the objects. The reference values are according to the functions; as a result, you cannot change the value of the references. However, you can change the objects if it is mutable."
+Python,What is the difference between a Set and Dictionary?,"The set is an unordered collection of data types that is iterable, mutable and has no duplicate elements.
+A dictionary in Python is an ordered collection of data values, used to store data values like a map."
+Python,What is List Comprehension? Give an Example.,"List comprehension is a syntax construction to ease the creation of a list based on existing iterable.For Example: 
+my_list = [i for i in range(1, 10)]"
+Python,What is a lambda function?,"A lambda function is an anonymous function. This function can have any number of parameters but, can have just one statement. For Example:
+
+a = lambda x, y : x*y
+print(a(7, 19))"
+Django,What are Django URLs?,"URLs are one of the most important parts of a web application and Django provides you with an elegant way to design your own custom URLs with help of its module known as URLconf (URL Configuration). The basic functionality of this python module is to 
+You can design your own URLs in Django in the way you like and then map them to the python function (View function). These URLs can be static as well as dynamic. These URLs as present in the urls.py where they are matched with the equivalent view function. 
+
+Basic Syntax:
+
+from django.urls import path
+from . import views
+urlpatterns = [
+   path('data/2020/', views.data_2020),
+   path('data/<int:year>/', views.data_year)
+]"
+Django,Explain the django project directory structure?,"manage.py - A command-line utility that allows you to interact with your Django project
+__init__.py - An empty file that tells Python that the current directory should be considered as a Python package
+settings.py - Comprises the configurations of the current project like DB connections.
+urls.py - All the URLs of the project are present here
+wsgi.py - This is an entry point for your application which is used by the web servers to serve the project you have created."
+Django,What are models in Django?,"A model in Django refers to a class that maps to a database table or database collection. Each attribute of the Django model class represents a database field. They are defined in app/models.py
+
+Example: 
+
+from django.db import models
+class SampleModel(models.Model):
+field1 = models.CharField(max_length = 50)
+field2 = models.IntegerField()
+class Meta:
+db_table = “sample_model”
+Every model inherits from django.db.models.Model
+
+Our example has 2 attributes (1 char and 1 integer field), those will be in the table fields.
+
+The metaclass helps you set things like available permissions, singular and plural versions of the name, associated database table name, whether the model is abstract or not, etc.
+
+To get more information about models you can refer here: https://docs.djangoproject.com/en/3.1/topics/db/models/."
+Django,What are templates in Django or Django template language?,"Templates are an integral part of the Django MVT architecture. They generally comprise HTML, CSS, and js in which dynamic variables and information are embedded with the help of views. Some constructs are recognized and interpreted by the template engine. The main ones are variables and tags.
+
+A template is rendered with a context. Rendering just replaces variables with their values, present in the context, and processes tags. Everything else remains as it is.
+
+The syntax of the Django template language includes the following four constructs :
+
+Variables
+Tags
+Filters
+Comments
+To read more about templates you can refer to this: https://docs.djangoproject.com/en/3.1/topics/templates/"
+Django,What are views in Django?,"A view function, or “view” for short, is simply a Python function that takes a web request and returns a web response. This response can be HTML contents of a web page, or a redirect, or a 404 error, or an XML document, or an image, etc. 
+
+Example:
+
+from django.http import HttpResponse
+def sample_function(request):
+ return HttpResponse(“Welcome to Django”)
+There are two types of views:
+
+Function-Based Views: In this, we import our view as a function.
+Class-based Views: It’s an object-oriented approach."
+Django,What is Django ORM?,"This ORM (an acronym for Object Relational Mapper) enables us to interact with databases in a more pythonic way like we can avoid writing raw queries, it is possible to retrieve, save, delete and perform other operations over the database without ever writing any SQL query. It works as an abstraction layer between the models and the database."
+Django,Define static files and explain their uses?,"Websites generally need to serve additional files such as images. Javascript or CSS. In Django, these files are referred to as “static files”, Apart from that Django provides django.contrib.staticfiles to manage these static files."
+Django,What is Django Rest Framework(DRF)?,Django Rest Framework is an open-source framework based upon Django which lets you create RESTful APIs rapidly.
+Django,What is django-admin and manage.py and explain its commands?,"django-admin is Django’s command-line utility for administrative tasks. In addition to this, a manage.py file is also automatically created in each Django project. Not only does it perform the same purpose as the django-admin but it also sets the DJANGO_SETTINGS_MODULE environment variable to point to the project's settings.py file.
+
+django-admin help - used to display usage information and a list of the commands provided by each application.
+django-admin version - used to check your Django version.
+django-admin check - used to inspect the entire Django project for common problems.
+django-admin compilemessages - Compiles .po files created by makemessages to .mo files for use with the help of built-in gettext support.
+django-admin createcachetable - Creates the cache tables for use in the database cache backend.
+django-admin dbshell - Runs the command-line client for the database engine specified in your ENGINE setting(s), with the connection parameters (USER, PASSWORD, DB_NAME, USER etc.) specified settings file.
+django-admin diffsettings - Shows the difference between the existing settings file and Django’s default settings.
+django-admin dumpdata - Used to the dumpdata from the database.
+django-admin flush - Flush all values from the database and also re-executes any post-synchronization handlers specified in the code.
+django-admin inspectdb - It generates django models from the existing database tables.
+django-admin loaddata - loads the data into the database from the fixture file.
+django-admin makemessages - Used for translation purpose and it generates a message file too.
+django-admin makemigrations - Generates new migrations as per the changes detected to your models.
+django-admin migrate - Executes SQL commands after which the database state with the current set of models and migrations are synchronized.
+django-admin runserver - Starts a light-weight Web server on the local machine for development. The default server runs on port 8000 on the IP address 127.0.0.1. You can pass a custom IP address and port number explicitly if you want.
+django-admin sendtestemail - This is used to confirm email sending through Django is working by sending a test email to the recipient(s) specified.
+django-admin shell - Starts the Python interactive interpreter.
+django-admin showmigrations - Shows all migrations present in the project.
+django-admin sqlflush - Prints the SQL statements that would be executed for the flush command mentioned above.
+django-admin sqlmigrate - Prints the SQL statement for the named migration.
+django-admin sqlsequencereset - output the SQL queries for resetting sequences for the given app name(s).
+django-admin squashmigrations - Squashes a range of migrations for a particular app_label.
+django-admin startapp - Creates a new Django app for the given app name within the current directory or at the given destination.
+django-admin startproject - Creates a new Django project directory structure for the given project name within the current directory or at the given destination.
+django-admin test - Runs tests for all installed apps.
+django-admin testserver - Runs a Django development server (which is also executed via the runserver command) using data from the given fixture(s).
+django-admin changepassword - offers a method to change the user's password.
+django-admin createsuperuser - Creates a user account with all permissions(also known as superuser account).
+django-admin remove_stale_contenttypes - removes stale content types (from deleted models) in your database.
+django-admin clearsessions - Can be used to clean out expired sessions or as a cron job."
+Django,What is Jinja templating?,"Jinja Templating is a very popular templating engine for Python, the latest version is Jinja2. 
+
+Some of its features are:
+
+Sandbox Execution - This is a sandbox (or a protected) framework for automating the testing process
+HTML Escaping - It provides automatic HTML Escaping as <, >, & characters have special values in templates and if using a regular text, these symbols can lead to XSS Attacks which Jinja deals with automatically.
+Template Inheritance
+Generates HTML templates much faster than default engine
+Easier to debug as compared to the default engine."
+Django,,
+Django,,
+Django,,
+Django,,
+Django,,
+Django,,
+Django,,
+Django,,
